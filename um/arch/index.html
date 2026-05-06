@@ -72,6 +72,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#architecture" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -369,6 +374,26 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -386,6 +411,47 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mailbox-unit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mailbox unit
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clock-and-reset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clock and reset
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -444,6 +510,38 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mailbox-unit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mailbox unit
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clock-and-reset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clock and reset
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -463,9 +561,122 @@
   
 
 
-  <h1>Architecture</h1>
-
-
+<h1 id="architecture">Architecture</h1>
+<p><a class="glightbox" href="../../img/block_diagram.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Block Diagram" src="../../img/block_diagram.png" /></a></p>
+<p>As shown in the block diagram above, <em>Security Island</em> comprises these components:</p>
+<ul>
+<li>
+<p><strong>Root-of-Trust</strong></p>
+<ul>
+<li>a RV32-based Hardware Root of Trust (HW RoT) system that ensures the secure boot
+for the whole platform, serves as secure monitor for the entire
+system, and provides crypto acceleration services through various crypto-accelerators.</li>
+</ul>
+</li>
+<li>
+<p><strong>Cluster Accelerator</strong></p>
+<ul>
+<li>a programmable multi-core accelerator (PMCA), which is an 8-cores
+cluster with floating point processing capabilities (FPU) to accelerate intensive control tasks and with Hybrid Modular Redundancy (HMR) capabilities oriented to compute intensive integer workloads such as AI.</li>
+</ul>
+</li>
+<li>
+<p><strong>Memory</strong></p>
+<ul>
+<li>a 256-KiB L2 memory</li>
+</ul>
+</li>
+<li>
+<p><strong>Mailbox unit</strong></p>
+<ul>
+<li>Main communication vehicle between cluster accelerator and RoT, based on an interrupt notification mechanism</li>
+</ul>
+</li>
+<li>
+<p><strong>Configuration Registers</strong></p>
+<ul>
+<li>some configuration registers for clock dividers values and clock enable</li>
+</ul>
+</li>
+</ul>
+<h2 id="mailbox-unit"><a href="https://github.com/pulp-platform/mailbox_unit">Mailbox unit</a></h2>
+<table>
+<thead>
+<tr>
+<th><strong>Offset</strong></th>
+<th><strong>Register</strong></th>
+<th><strong>Width (bit)</strong></th>
+<th><strong>Note</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>0x00 + i * 0x100</code></td>
+<td><code>INT_SND_STAT</code></td>
+<td><code>1</code></td>
+<td>current irq status</td>
+</tr>
+<tr>
+<td><code>0x04 + i * 0x100</code></td>
+<td><code>INT_SND_SET</code></td>
+<td><code>1</code></td>
+<td>set irq</td>
+</tr>
+<tr>
+<td><code>0x08 + i * 0x100</code></td>
+<td><code>INT_SND_CLR</code></td>
+<td><code>1</code></td>
+<td>clear irq</td>
+</tr>
+<tr>
+<td><code>0x0C + i * 0x100</code></td>
+<td><code>INT_SND_EN</code></td>
+<td><code>1</code></td>
+<td>enable irq</td>
+</tr>
+<tr>
+<td><code>0x40 + i * 0x100</code></td>
+<td><code>INT_RCV_STAT</code></td>
+<td><code>1</code></td>
+<td>current irq status</td>
+</tr>
+<tr>
+<td><code>0x44 + i * 0x100</code></td>
+<td><code>INT_RCV_SET</code></td>
+<td><code>1</code></td>
+<td>set irq</td>
+</tr>
+<tr>
+<td><code>0x48 + i * 0x100</code></td>
+<td><code>INT_RCV_CLR</code></td>
+<td><code>1</code></td>
+<td>clear irq</td>
+</tr>
+<tr>
+<td><code>0x4C + i * 0x100</code></td>
+<td><code>INT_RCV_EN</code></td>
+<td><code>1</code></td>
+<td>enable irq</td>
+</tr>
+<tr>
+<td><code>0x80 + i * 0x100</code></td>
+<td><code>LETTER0</code></td>
+<td><code>32</code></td>
+<td>message</td>
+</tr>
+<tr>
+<td><code>0x8C + i * 0x100</code></td>
+<td><code>LETTER1</code></td>
+<td><code>32</code></td>
+<td>message</td>
+</tr>
+</tbody>
+</table>
+<p>The above register map can be found in the dedicated
+<a href="https://github.com/pulp-platform/mailbox_unit">repository</a> and is reported here for convenience.</p>
+<h2 id="clock-and-reset">Clock and reset</h2>
+<p>Security Island has a single input clock which enters into 2 separated configurable clock dividers for RoT and Cluster.</p>
+<p><a class="glightbox" href="../img/clk_rst.svg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Reset and Clock Distribution for a domain *X*" src="../img/clk_rst.svg" /></a></p>
 
 
 
