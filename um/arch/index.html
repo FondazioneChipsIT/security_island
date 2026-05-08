@@ -598,16 +598,24 @@ A <a href="https://doi.org/10.1145/3635161">Hybrid Modular Redundancy (HMR)</a> 
 split/lock of the available cores in different redundant configurations during runtime, trading off
 the computing performance and the fault resilience capability according to the criticality of the
 application.</p>
-<p>The PMCA can be configured in multiple redundant modes:
-* <strong>Independent:</strong> All cores act independently with no redundancy mechanism. This configuration allows
-higher performance but has no reliability.
-* <strong>Dual Modular Redundancy (DMR)</strong>: The cores are grouped in lock-stepped pairs and rely on a
+<p>The PMCA can be configured in multiple redundant modes:</p>
+<ul>
+<li>
+<p><strong>Independent:</strong> All cores act independently with no redundancy mechanism. This configuration allows
+higher performance but has no reliability.</p>
+</li>
+<li>
+<p><strong>Dual Modular Redundancy (DMR)</strong>: The cores are grouped in lock-stepped pairs and rely on a
 specialized hardware extension for fast fault recovery in less than 30 clock cycles in case of
 fault detection. The PMCA provides the best trade-off between performance and fault recovery in
-this configuration.
-* <strong>Triple Modular Redundancy (TMR)</strong>: The cores are grouped in lock-stepped triplets and rely on
+this configuration.</p>
+</li>
+<li>
+<p><strong>Triple Modular Redundancy (TMR)</strong>: The cores are grouped in lock-stepped triplets and rely on
 either hardware extension or software mechanisms to recover from incurring faults. The PMCA
 provides the highest fault resilience in this configuration, at the cost of reduced performance.</p>
+</li>
+</ul>
 <p>By default, the PMCA's processing elements and tensor accelerator share access to 256 KiB of
 L1 SPM (TCDM).</p>
 </li>
