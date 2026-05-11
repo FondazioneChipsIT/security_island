@@ -9,25 +9,25 @@
       
       
       
-        <link rel="prev" href="..">
+        <link rel="prev" href="../sim/">
       
       
-        <link rel="next" href="../tg/">
+        <link rel="next" href="../xilinx/">
       
       
         
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>Getting Started - Security Island</title>
+        <title>Synthesis and physical implementation - Security Island</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
       
 
@@ -46,13 +46,13 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
-   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
     html.glightbox-open { overflow: initial; height: 100%; }
     .gslide-title { margin-top: 0px; user-select: text; }
     .gslide-desc { color: #666; user-select: text; }
@@ -61,7 +61,7 @@
     .gdesc-inner { font-size: 0.75rem; }
     body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
     body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -71,11 +71,6 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
-      
-        
-        <a href="#getting-started" class="md-skip">
-          Skip to content
-        </a>
       
     </div>
     <div data-md-component="announce">
@@ -89,7 +84,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Security Island" class="md-header__button md-logo" aria-label="Security Island" data-md-component="logo">
+    <a href="../.." title="Security Island" class="md-header__button md-logo" aria-label="Security Island" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -109,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Getting Started
+              Synthesis and physical implementation
             
           </span>
         </div>
@@ -159,7 +154,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Security Island" class="md-nav__button md-logo" aria-label="Security Island" data-md-component="logo">
+    <a href="../.." title="Security Island" class="md-nav__button md-logo" aria-label="Security Island" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -186,8 +181,6 @@
       
   
   
-    
-  
   
   
     
@@ -208,15 +201,17 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href=".." class="md-nav__link ">
+            <a href="../.." class="md-nav__link ">
               
   
   
@@ -240,7 +235,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             
@@ -257,37 +252,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Getting Started
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../gs/" class="md-nav__link">
         
   
   
@@ -303,59 +271,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#repository-structure" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Repository structure
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dependencies" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Dependencies
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#building-security_island" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Building security_island
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -372,6 +287,8 @@
       
   
   
+    
+  
   
   
     
@@ -398,17 +315,15 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../tg/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -432,7 +347,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -452,7 +367,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tg/sim/" class="md-nav__link">
+      <a href="../sim/" class="md-nav__link">
         
   
   
@@ -477,10 +392,17 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../tg/synth/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -496,6 +418,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -508,7 +431,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tg/xilinx/" class="md-nav__link">
+      <a href="../xilinx/" class="md-nav__link">
         
   
   
@@ -536,7 +459,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tg/integr/" class="md-nav__link">
+      <a href="../integr/" class="md-nav__link">
         
   
   
@@ -600,7 +523,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../um/" class="md-nav__link ">
+            <a href="../../um/" class="md-nav__link ">
               
   
   
@@ -644,7 +567,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../um/arch/" class="md-nav__link">
+      <a href="../../um/arch/" class="md-nav__link">
         
   
   
@@ -672,7 +595,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../um/sw/" class="md-nav__link">
+      <a href="../../um/sw/" class="md-nav__link">
         
   
   
@@ -717,49 +640,6 @@
   
   
   
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#repository-structure" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Repository structure
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dependencies" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Dependencies
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#building-security_island" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Building security_island
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -779,55 +659,17 @@
   
 
 
-<h1 id="getting-started">Getting Started</h1>
-<p>We first discuss the repo structure, its dependencies, and how to build it.</p>
-<h2 id="repository-structure">Repository structure</h2>
-<p>The project is structured as follows:</p>
-<table>
-<thead>
-<tr>
-<th>Directory</th>
-<th>Description</th>
-<th>Documentation</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>doc</code></td>
-<td>Documentation</td>
-<td><a href="../">Home</a></td>
-</tr>
-<tr>
-<td><code>hw</code></td>
-<td>Hardware sources as SystemVerilog RTL</td>
-<td><a href="../um/arch/">Architecture</a></td>
-</tr>
-<tr>
-<td><code>sw</code></td>
-<td>Software stack, build setup, and tests</td>
-<td><a href="../um/sw/">Software Stack</a></td>
-</tr>
-<tr>
-<td><code>target</code></td>
-<td>Simulation, FPGA, and ASIC target setups</td>
-<td><a href="../tg/">Targets</a></td>
-</tr>
-<tr>
-<td><code>utils</code></td>
-<td>Utility scripts</td>
-<td></td>
-</tr>
-<tr>
-<td><code>scripts</code></td>
-<td>Some helper scripts for env setup</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h2 id="dependencies">Dependencies</h2>
-<p>TODO</p>
-<h2 id="building-security_island">Building security_island</h2>
-<p>TODO</p>
+  <h1>Synthesis and physical implementation</h1>
+
+<!-- # Logic synthesis and physical implementation
+
+Currently, synthesis of Carfield is available with closed source tools, and hence its scripts are
+added in the `nonfree` repository mentioned in the [Getting Started](../gs.md) section.
+
+Once open-EDA and open-PDK flow is available, it will be updated in this page.
+
+For independent synthesis of carfield by external users, we provide a wrapper under
+`target/synth/carfield_synth_wrap.sv`. -->
 
 
 
@@ -857,7 +699,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: security_island">
+          <a href="../sim/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Simulation">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -867,20 +709,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                security_island
+                Simulation
               </div>
             </div>
           </a>
         
         
           
-          <a href="../tg/" class="md-footer__link md-footer__link--next" aria-label="Next: Index">
+          <a href="../xilinx/" class="md-footer__link md-footer__link--next" aria-label="Next: Xilinx FPGAs">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Index
+                Xilinx FPGAs
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -917,10 +759,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.expand", "navigation.tracking", "navigation.sections", "navigation.indexes", "navigation.footer"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.expand", "navigation.tracking", "navigation.sections", "navigation.indexes", "navigation.footer"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
