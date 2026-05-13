@@ -23,7 +23,7 @@
     
     
       
-        <title>Index - Security Island</title>
+        <title>Targets - Security Island</title>
       
     
     
@@ -72,6 +72,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#targets" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -104,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Index
+              Targets
             
           </span>
         </div>
@@ -632,6 +637,38 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#included-targets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Included Targets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#external-targets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        External Targets
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -651,31 +688,23 @@
   
 
 
-  <h1>Index</h1>
-
-<!-- # Targets
-
-A *target* refers to an end use of SCAR-V. This could be a simulation setup, an FPGA or ASIC
-implementation, or the less common integration into other SoCs.
-
-Target setups can either be *included* in this repository or live in an *external* repository and
-use SCAR-V as a dependency.
-
-## Included Targets
-
-Included target setups live in the `target` directory. Each included target has a *documentation
-page* in this chapter:
-
-- [Simulation](sim.md)
-- [Synthesis and physical implementation](synth.md)
-- [Xilinx FPGAs](xilinx.md)
-
-## External Targets
-
-For ASIC implementation target, where an additional wrapper is needed for clock generation blocks,
-bidirectional pads or additional circuitry, or the less common integration into larger SoCs,
-SCAR-V may be included either as a Bender dependency or Git submodule. For further information and
-best pratices, see [Integration](integr.md). -->
+<h1 id="targets">Targets</h1>
+<p>A <em>target</em> refers to an implementation of the security island. This could be a simulation setup, an FPGA or ASIC
+implementation, or the more common integration into other SoCs.</p>
+<p>Target setups can either be <em>included</em> in this repository or live in an <em>external</em> repository and
+use the security island as a dependency.</p>
+<h2 id="included-targets">Included Targets</h2>
+<p>Included target setups live in the <code>target</code> directory. Each included target has a <em>documentation
+page</em> in this chapter:</p>
+<ul>
+<li><a href="sim/">Simulation</a></li>
+<li><a href="synth/">Synthesis and physical implementation</a></li>
+<li><a href="xilinx/">Xilinx FPGAs</a></li>
+</ul>
+<h2 id="external-targets">External Targets</h2>
+<p>For ASIC implementation target, where the security island is integrated into larger SoCs,
+the security island is included either as a Bender dependency or Git submodule. For further information and
+best pratices, see <a href="integr/">Integration</a>.</p>
 
 
 
