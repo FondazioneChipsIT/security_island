@@ -183,161 +183,160 @@ The Security Island has a single input clock which enters into 2 separated confi
 
 ## Interrupt map
 
-| **Interrupt Source**                           | **CLIC ID #**     | **Bitwidth** | **Connection**                                                | **Type**        | **Comment**               |
-|------------------------------------------------|-------------------|--------------|---------------------------------------------------------------|-----------------|---------------------------|
-| **OpenTitan peripherals**                      |                   |              |                                                               |                 |                           |
-| `intr_edn1_edn_fatal_err                 `     | `IDs [185 +: 1]`  |              |                                                               |                 |                           |
-| `intr_edn1_edn_cmd_req_done              `     | `IDs [184 +: 1]`  |              |                                                               |                 |                           |
-| `intr_edn0_edn_fatal_err                 `     | `IDs [183 +: 1]`  |              |                                                               |                 |                           |
-| `intr_edn0_edn_cmd_req_done              `     | `IDs [182 +: 1]`  |              |                                                               |                 |                           |
-| `intr_entropy_src_es_fatal_err           `     | `IDs [181 +: 1]`  |              |                                                               |                 |                           |
-| `intr_entropy_src_es_observe_fifo_ready  `     | `IDs [180 +: 1]`  |              |                                                               |                 |                           |
-| `intr_entropy_src_es_health_test_failed  `     | `IDs [179 +: 1]`  |              |                                                               |                 |                           |
-| `intr_entropy_src_es_entropy_valid       `     | `IDs [178 +: 1]`  |              |                                                               |                 |                           |
-| `intr_csrng_cs_fatal_err                 `     | `IDs [177 +: 1]`  |              |                                                               |                 |                           |
-| `intr_csrng_cs_hw_inst_exc               `     | `IDs [176 +: 1]`  |              |                                                               |                 |                           |
-| `intr_csrng_cs_entropy_req               `     | `IDs [175 +: 1]`  |              |                                                               |                 |                           |
-| `intr_csrng_cs_cmd_req_done              `     | `IDs [174 +: 1]`  |              |                                                               |                 |                           |
-| `intr_keymgr_op_done                     `     | `IDs [173 +: 1]`  |              |                                                               |                 |                           |
-| `intr_otbn_done                          `     | `IDs [172 +: 1]`  |              |                                                               |                 |                           |
-| `intr_kmac_kmac_err                      `     | `IDs [171 +: 1]`  |              |                                                               |                 |                           |
-| `intr_kmac_fifo_empty                    `     | `IDs [170 +: 1]`  |              |                                                               |                 |                           |
-| `intr_kmac_kmac_done                     `     | `IDs [169 +: 1]`  |              |                                                               |                 |                           |
-| `intr_hmac_hmac_err                      `     | `IDs [168 +: 1]`  |              |                                                               |                 |                           |
-| `intr_hmac_fifo_empty                    `     | `IDs [167 +: 1]`  |              |                                                               |                 |                           |
-| `intr_hmac_hmac_done                     `     | `IDs [166 +: 1]`  |              |                                                               |                 |                           |
-| `intr_flash_ctrl_corr_err                `     | `IDs [165 +: 1]`  |              |                                                               |                 |                           |
-| `intr_flash_ctrl_op_done                 `     | `IDs [164 +: 1]`  |              |                                                               |                 |                           |
-| `intr_flash_ctrl_rd_lvl                  `     | `IDs [163 +: 1]`  |              |                                                               |                 |                           |
-| `intr_flash_ctrl_rd_full                 `     | `IDs [162 +: 1]`  |              |                                                               |                 |                           |
-| `intr_flash_ctrl_prog_lvl                `     | `IDs [161 +: 1]`  |              |                                                               |                 |                           |
-| `irq_mbox_i                              `     | `IDs [160 +: 1]`  |              |                                                               |                 |                           |
-| `intr_tlul2axi_mbox_irq                  `     | `IDs [159 +: 1]`  |              |                                                               |                 |                           |
-| `irq_cfi_req_i                           `     | `IDs [158 +: 1]`  |              |                                                               |                 |                           |
-| `cfi_watermark_irq_i                     `     | `IDs [157 +: 1]`  |              |                                                               |                 |                           |
-| `intr_aon_timer_aon_wdog_timer_bark      `     | `IDs [156 +: 1]`  |              |                                                               |                 |                           |
-| `intr_aon_timer_aon_wkup_timer_expired   `     | `IDs [155 +: 1]`  |              |                                                               |                 |                           |
-| `intr_adc_ctrl_aon_match_done            `     | `IDs [154 +: 1]`  |              |                                                               |                 |                           |
-| `intr_sysrst_ctrl_aon_event_detected     `     | `IDs [153 +: 1]`  |              |                                                               |                 |                           |
-| `intr_pwrmgr_aon_wakeup                  `     | `IDs [152 +: 1]`  |              |                                                               |                 |                           |
-| `intr_usbdev_link_out_err                `     | `IDs [151 +: 1]`  |              |                                                               |                 |                           |
-| `intr_usbdev_powered                     `     | `IDs [150 +: 1]`  |              |                                                               |                 |                           |
-| `intr_usbdev_frame                       `     | `IDs [149 +: 1]`  |              |                                                               |                 |                           |
-| `intr_usbdev_rx_bitstuff_err             `     | `IDs [148 +: 1]`  |              |                                                               |                 |                           |
-| `intr_usbdev_rx_pid_err                  `     | `IDs [147 +: 1]`  |              |                                                               |                 |                           |
-| `intr_usbdev_rx_crc_err                  `     | `IDs [146 +: 1]`  |              |                                                               |                 |                           |
-| `intr_usbdev_link_in_err                 `     | `IDs [145 +: 1]`  |              |                                                               |                 |                           |
-| `intr_usbdev_av_overflow                 `     | `IDs [144 +: 1]`  |              |                                                               |                 |                           |
-| `intr_usbdev_rx_full                     `     | `IDs [143 +: 1]`  |              |                                                               |                 |                           |
-| `intr_usbdev_av_empty                    `     | `IDs [142 +: 1]`  |              |                                                               |                 |                           |
-| `intr_usbdev_link_resume                 `     | `IDs [141 +: 1]`  |              |                                                               |                 |                           |
-| `intr_usbdev_link_suspend                `     | `IDs [140 +: 1]`  |              |                                                               |                 |                           |
-| `intr_usbdev_link_reset                  `     | `IDs [139 +: 1]`  |              |                                                               |                 |                           |
-| `intr_usbdev_host_lost                   `     | `IDs [138 +: 1]`  |              |                                                               |                 |                           |
-| `intr_usbdev_disconnected                `     | `IDs [137 +: 1]`  |              |                                                               |                 |                           |
-| `intr_usbdev_pkt_sent                    `     | `IDs [136 +: 1]`  |              |                                                               |                 |                           |
-| `intr_usbdev_pkt_received                `     | `IDs [135 +: 1]`  |              |                                                               |                 |                           |
-| `intr_spi_host1_spi_event                `     | `IDs [134 +: 1]`  |              |                                                               |                 |                           |
-| `intr_spi_host1_error                    `     | `IDs [133 +: 1]`  |              |                                                               |                 |                           |
-| `intr_spi_host0_spi_event                `     | `IDs [132 +: 1]`  |              |                                                               |                 |                           |
-| `intr_spi_host0_error                    `     | `IDs [131 +: 1]`  |              |                                                               |                 |                           |
-| `intr_alert_handler_classd               `     | `IDs [130 +: 1]`  |              |                                                               |                 |                           |
-| `intr_alert_handler_classc               `     | `IDs [129 +: 1]`  |              |                                                               |                 |                           |
-| `intr_alert_handler_classb               `     | `IDs [128 +: 1]`  |              |                                                               |                 |                           |
-| `intr_alert_handler_classa               `     | `IDs [127 +: 1]`  |              |                                                               |                 |                           |
-| `intr_otp_ctrl_otp_error                 `     | `IDs [126 +: 1]`  |              |                                                               |                 |                           |
-| `intr_otp_ctrl_otp_operation_done        `     | `IDs [125 +: 1]`  |              |                                                               |                 |                           |
-| `intr_rv_timer_timer_expired_hart0_timer0`     | `IDs [124 +: 1]`  |              |                                                               |                 |                           |
-| `intr_pattgen_done_ch1                   `     | `IDs [123 +: 1]`  |              |                                                               |                 |                           |
-| `intr_pattgen_done_ch0                   `     | `IDs [122 +: 1]`  |              |                                                               |                 |                           |
-| `intr_i2c2_host_timeout                  `     | `IDs [121 +: 1]`  |              |                                                               |                 |                           |
-| `intr_i2c2_unexp_stop                    `     | `IDs [120 +: 1]`  |              |                                                               |                 |                           |
-| `intr_i2c2_acq_full                      `     | `IDs [119 +: 1]`  |              |                                                               |                 |                           |
-| `intr_i2c2_tx_overflow                   `     | `IDs [118 +: 1]`  |              |                                                               |                 |                           |
-| `intr_i2c2_tx_stretch                    `     | `IDs [117 +: 1]`  |              |                                                               |                 |                           |
-| `intr_i2c2_cmd_complete                  `     | `IDs [116 +: 1]`  |              |                                                               |                 |                           |
-| `intr_i2c2_sda_unstable                  `     | `IDs [115 +: 1]`  |              |                                                               |                 |                           |
-| `intr_i2c2_stretch_timeout               `     | `IDs [114 +: 1]`  |              |                                                               |                 |                           |
-| `intr_i2c2_sda_interference              `     | `IDs [113 +: 1]`  |              |                                                               |                 |                           |
-| `intr_i2c2_scl_interference              `     | `IDs [112 +: 1]`  |              |                                                               |                 |                           |
-| `intr_i2c2_nak                           `     | `IDs [111 +: 1]`  |              |                                                               |                 |                           |
-| `intr_i2c2_rx_overflow                   `     | `IDs [110 +: 1]`  |              |                                                               |                 |                           |
-| `intr_i2c2_fmt_overflow                  `     | `IDs [109 +: 1]`  |              |                                                               |                 |                           |
-| `intr_i2c2_rx_watermark                  `     | `IDs [108 +: 1]`  |              |                                                               |                 |                           |
-| `intr_i2c2_fmt_watermark                 `     | `IDs [107 +: 1]`  |              |                                                               |                 |                           |
-| `intr_i2c1_host_timeout                  `     | `IDs [106 +: 1]`  |              |                                                               |                 |                           |
-| `intr_i2c1_unexp_stop                    `     | `IDs [105 +: 1]`  |              |                                                               |                 |                           |
-| `intr_i2c1_acq_full                      `     | `IDs [104 +: 1]`  |              |                                                               |                 |                           |
-| `intr_i2c1_tx_overflow                   `     | `IDs [103 +: 1]`  |              |                                                               |                 |                           |
-| `intr_i2c1_tx_stretch                    `     | `IDs [102 +: 1]`  |              |                                                               |                 |                           |
-| `intr_i2c1_cmd_complete                  `     | `IDs [101 +: 1]`  |              |                                                               |                 |                           |
-| `intr_i2c1_sda_unstable                  `     | `IDs [100 +: 1]`  |              |                                                               |                 |                           |
-| `intr_i2c1_stretch_timeout               `     | `IDs [99 +: 1] `  |              |                                                               |                 |                           |
-| `intr_i2c1_sda_interference              `     | `IDs [98 +: 1] `  |              |                                                               |                 |                           |
-| `intr_i2c1_scl_interference              `     | `IDs [97 +: 1] `  |              |                                                               |                 |                           |
-| `intr_i2c1_nak                           `     | `IDs [96 +: 1] `  |              |                                                               |                 |                           |
-| `intr_i2c1_rx_overflow                   `     | `IDs [95 +: 1] `  |              |                                                               |                 |                           |
-| `intr_i2c1_fmt_overflow                  `     | `IDs [94 +: 1] `  |              |                                                               |                 |                           |
-| `intr_i2c1_rx_watermark                  `     | `IDs [93 +: 1] `  |              |                                                               |                 |                           |
-| `intr_i2c1_fmt_watermark                 `     | `IDs [92 +: 1] `  |              |                                                               |                 |                           |
-| `intr_i2c0_host_timeout                  `     | `IDs [91 +: 1] `  |              |                                                               |                 |                           |
-| `intr_i2c0_unexp_stop                    `     | `IDs [90 +: 1] `  |              |                                                               |                 |                           |
-| `intr_i2c0_acq_full                      `     | `IDs [89 +: 1] `  |              |                                                               |                 |                           |
-| `intr_i2c0_tx_overflow                   `     | `IDs [88 +: 1] `  |              |                                                               |                 |                           |
-| `intr_i2c0_tx_stretch                    `     | `IDs [87 +: 1] `  |              |                                                               |                 |                           |
-| `intr_i2c0_cmd_complete                  `     | `IDs [86 +: 1] `  |              |                                                               |                 |                           |
-| `intr_i2c0_sda_unstable                  `     | `IDs [85 +: 1] `  |              |                                                               |                 |                           |
-| `intr_i2c0_stretch_timeout               `     | `IDs [84 +: 1] `  |              |                                                               |                 |                           |
-| `intr_i2c0_sda_interference              `     | `IDs [83 +: 1] `  |              |                                                               |                 |                           |
-| `intr_i2c0_scl_interference              `     | `IDs [82 +: 1] `  |              |                                                               |                 |                           |
-| `intr_i2c0_nak                           `     | `IDs [81 +: 1] `  |              |                                                               |                 |                           |
-| `intr_i2c0_rx_overflow                   `     | `IDs [80 +: 1] `  |              |                                                               |                 |                           |
-| `intr_i2c0_fmt_overflow                  `     | `IDs [79 +: 1] `  |              |                                                               |                 |                           |
-| `intr_i2c0_rx_watermark                  `     | `IDs [78 +: 1] `  |              |                                                               |                 |                           |
-| `intr_i2c0_fmt_watermark                 `     | `IDs [77 +: 1] `  |              |                                                               |                 |                           |
-| `intr_spi_device_tpm_header_not_empty    `     | `IDs [76 +: 1] `  |              |                                                               |                 |                           |
-| `intr_spi_device_readbuf_flip            `     | `IDs [75 +: 1] `  |              |                                                               |                 |                           |
-| `intr_spi_device_readbuf_watermark       `     | `IDs [74 +: 1] `  |              |                                                               |                 |                           |
-| `intr_spi_device_upload_payload_overflow `     | `IDs [73 +: 1] `  |              |                                                               |                 |                           |
-| `intr_spi_device_upload_payload_not_empty`     | `IDs [72 +: 1] `  |              |                                                               |                 |                           |
-| `intr_spi_device_upload_cmdfifo_not_empty`     | `IDs [71 +: 1] `  |              |                                                               |                 |                           |
-| `intr_spi_device_generic_tx_underflow    `     | `IDs [70 +: 1] `  |              |                                                               |                 |                           |
-| `intr_spi_device_generic_rx_overflow     `     | `IDs [69 +: 1] `  |              |                                                               |                 |                           |
-| `intr_spi_device_generic_rx_error        `     | `IDs [68 +: 1] `  |              |                                                               |                 |                           |
-| `intr_spi_device_generic_tx_watermark    `     | `IDs [67 +: 1] `  |              |                                                               |                 |                           |
-| `intr_spi_device_generic_rx_watermark    `     | `IDs [66 +: 1] `  |              |                                                               |                 |                           |
-| `intr_spi_device_generic_rx_full         `     | `IDs [65 +: 1] `  |              |                                                               |                 |                           |
-| `intr_gpio_gpio                          `     | `IDs [33 +: 32]`  |              |                                                               |                 |                           |
-| `intr_uart3_rx_parity_err                `     | `IDs [32 +: 1] `  |              |                                                               |                 |                           |
-| `intr_uart3_rx_timeout                   `     | `IDs [31 +: 1] `  |              |                                                               |                 |                           |
-| `intr_uart3_rx_break_err                 `     | `IDs [30 +: 1] `  |              |                                                               |                 |                           |
-| `intr_uart3_rx_frame_err                 `     | `IDs [29 +: 1] `  |              |                                                               |                 |                           |
-| `intr_uart3_rx_overflow                  `     | `IDs [28 +: 1] `  |              |                                                               |                 |                           |
-| `intr_uart3_tx_empty                     `     | `IDs [27 +: 1] `  |              |                                                               |                 |                           |
-| `intr_uart3_rx_watermark                 `     | `IDs [26 +: 1] `  |              |                                                               |                 |                           |
-| `intr_uart3_tx_watermark                 `     | `IDs [25 +: 1] `  |              |                                                               |                 |                           |
-| `intr_uart2_rx_parity_err                `     | `IDs [24 +: 1] `  |              |                                                               |                 |                           |
-| `intr_uart2_rx_timeout                   `     | `IDs [23 +: 1] `  |              |                                                               |                 |                           |
-| `intr_uart2_rx_break_err                 `     | `IDs [22 +: 1] `  |              |                                                               |                 |                           |
-| `intr_uart2_rx_frame_err                 `     | `IDs [21 +: 1] `  |              |                                                               |                 |                           |
-| `intr_uart2_rx_overflow                  `     | `IDs [20 +: 1] `  |              |                                                               |                 |                           |
-| `intr_uart2_tx_empty                     `     | `IDs [19 +: 1] `  |              |                                                               |                 |                           |
-| `intr_uart2_rx_watermark                 `     | `IDs [18 +: 1] `  |              |                                                               |                 |                           |
-| `intr_uart2_tx_watermark                 `     | `IDs [17 +: 1] `  |              |                                                               |                 |                           |
-| `intr_uart1_rx_parity_err                `     | `IDs [16 +: 1] `  |              |                                                               |                 |                           |
-| `intr_uart1_rx_timeout                   `     | `IDs [15 +: 1] `  |              |                                                               |                 |                           |
-| `intr_uart1_rx_break_err                 `     | `IDs [14 +: 1] `  |              |                                                               |                 |                           |
-| `intr_uart1_rx_frame_err                 `     | `IDs [13 +: 1] `  |              |                                                               |                 |                           |
-| `intr_uart1_rx_overflow                  `     | `IDs [12 +: 1] `  |              |                                                               |                 |                           |
-| `intr_uart1_tx_empty                     `     | `IDs [11 +: 1] `  |              |                                                               |                 |                           |
-| `intr_uart1_rx_watermark                 `     | `IDs [10 +: 1] `  |              |                                                               |                 |                           |
-| `intr_uart1_tx_watermark                 `     | `IDs [9 +: 1]  `  |              |                                                               |                 |                           |
-| `intr_uart0_rx_parity_err                `     | `IDs [8 +: 1]  `  |              |                                                               |                 |                           |
-| `intr_uart0_rx_timeout                   `     | `IDs [7 +: 1]  `  |              |                                                               |                 |                           |
-| `intr_uart0_rx_break_err                 `     | `IDs [6 +: 1]  `  |              |                                                               |                 |                           |
-| `intr_uart0_rx_frame_err                 `     | `IDs [5 +: 1]  `  |              |                                                               |                 |                           |
-| `intr_uart0_rx_overflow                  `     | `IDs [4 +: 1]  `  |              |                                                               |                 |                           |
-| `intr_uart0_tx_empty                     `     | `IDs [3 +: 1]  `  |              |                                                               |                 |                           |
-| `intr_uart0_rx_watermark                 `     | `IDs [2 +: 1]  `  |              |                                                               |                 |                           |
-| `intr_uart0_tx_watermark                 `     | `IDs [1 +: 1]  `  |              |                                                               |                 |                           |
-| `1'b 0                                   `     | `ID [0 +: 1]   `  |              |                                                               |                 |                           |
+| **Interrupt Signal**                           | **CLIC ID #**     | **Bitwidth** | **IP Connection**  | **Type**        | **Comment**       |
+|------------------------------------------------|-------------------|--------------|--------------------|-----------------|-------------------|
+| `intr_edn1_edn_fatal_err                 `     | `IDs [185 +: 1]`  | 1            | edn1_edn           | level-sensitive | from Opentitan IP |
+| `intr_edn1_edn_cmd_req_done              `     | `IDs [184 +: 1]`  | 1            | edn1_edn           | level-sensitive | from Opentitan IP |
+| `intr_edn0_edn_fatal_err                 `     | `IDs [183 +: 1]`  | 1            | edn0_edn           | level-sensitive | from Opentitan IP |
+| `intr_edn0_edn_cmd_req_done              `     | `IDs [182 +: 1]`  | 1            | edn0_edn           | level-sensitive | from Opentitan IP |
+| `intr_entropy_src_es_fatal_err           `     | `IDs [181 +: 1]`  | 1            | entropy_src        | level-sensitive | from Opentitan IP |
+| `intr_entropy_src_es_observe_fifo_ready  `     | `IDs [180 +: 1]`  | 1            | entropy_src        | level-sensitive | from Opentitan IP |
+| `intr_entropy_src_es_health_test_failed  `     | `IDs [179 +: 1]`  | 1            | entropy_src        | level-sensitive | from Opentitan IP |
+| `intr_entropy_src_es_entropy_valid       `     | `IDs [178 +: 1]`  | 1            | entropy_src        | level-sensitive | from Opentitan IP |
+| `intr_csrng_cs_fatal_err                 `     | `IDs [177 +: 1]`  | 1            | csrng_cs           | level-sensitive | from Opentitan IP |
+| `intr_csrng_cs_hw_inst_exc               `     | `IDs [176 +: 1]`  | 1            | csrng_cs           | level-sensitive | from Opentitan IP |
+| `intr_csrng_cs_entropy_req               `     | `IDs [175 +: 1]`  | 1            | csrng_cs           | level-sensitive | from Opentitan IP |
+| `intr_csrng_cs_cmd_req_done              `     | `IDs [174 +: 1]`  | 1            | csrng_cs           | level-sensitive | from Opentitan IP |
+| `intr_keymgr_op_done                     `     | `IDs [173 +: 1]`  | 1            | keymgr             | level-sensitive | from Opentitan IP |
+| `intr_otbn_done                          `     | `IDs [172 +: 1]`  | 1            | otbn               | level-sensitive | from Opentitan IP |
+| `intr_kmac_kmac_err                      `     | `IDs [171 +: 1]`  | 1            | kmac               | level-sensitive | from Opentitan IP |
+| `intr_kmac_fifo_empty                    `     | `IDs [170 +: 1]`  | 1            | kmac               | level-sensitive | from Opentitan IP |
+| `intr_kmac_kmac_done                     `     | `IDs [169 +: 1]`  | 1            | kmac               | level-sensitive | from Opentitan IP |
+| `intr_hmac_hmac_err                      `     | `IDs [168 +: 1]`  | 1            | hmac               | level-sensitive | from Opentitan IP |
+| `intr_hmac_fifo_empty                    `     | `IDs [167 +: 1]`  | 1            | hmac               | level-sensitive | from Opentitan IP |
+| `intr_hmac_hmac_done                     `     | `IDs [166 +: 1]`  | 1            | hmac               | level-sensitive | from Opentitan IP |
+| `intr_flash_ctrl_corr_err                `     | `IDs [165 +: 1]`  | 1            | flash_ctrl         | level-sensitive | from Opentitan IP |
+| `intr_flash_ctrl_op_done                 `     | `IDs [164 +: 1]`  | 1            | flash_ctrl         | level-sensitive | from Opentitan IP |
+| `intr_flash_ctrl_rd_lvl                  `     | `IDs [163 +: 1]`  | 1            | flash_ctrl         | level-sensitive | from Opentitan IP |
+| `intr_flash_ctrl_rd_full                 `     | `IDs [162 +: 1]`  | 1            | flash_ctrl         | level-sensitive | from Opentitan IP |
+| `intr_flash_ctrl_prog_lvl                `     | `IDs [161 +: 1]`  | 1            | flash_ctrl         | level-sensitive | from Opentitan IP |
+| `irq_mbox_i                              `     | `IDs [160 +: 1]`  | 1            | SECD mailbox       | level-sensitive | EXTERNAL (SCAR-V) |
+| `intr_tlul2axi_mbox_irq                  `     | `IDs [159 +: 1]`  | 1            | SCAR-V mailbox     | level-sensitive | EXTERNAL (SCAR-V) |
+| `irq_cfi_req_i                           `     | `IDs [158 +: 1]`  | 1            | CVA6 CFI snooper   | level-sensitive | EXTERNAL (SCAR-V) |
+| `cfi_watermark_irq_i                     `     | `IDs [157 +: 1]`  | 1            | CVA6 CFI snooper   | level-sensitive | EXTERNAL (SCAR-V) |
+| `intr_aon_timer_aon_wdog_timer_bark      `     | `IDs [156 +: 1]`  | 1            | aon_timer          | level-sensitive | from Opentitan IP |
+| `intr_aon_timer_aon_wkup_timer_expired   `     | `IDs [155 +: 1]`  | 1            | aon_timer          | level-sensitive | from Opentitan IP |
+| `intr_adc_ctrl_aon_match_done            `     | `IDs [154 +: 1]`  | 1            | adc_ctrl           | level-sensitive | from Opentitan IP |
+| `intr_sysrst_ctrl_aon_event_detected     `     | `IDs [153 +: 1]`  | 1            | sysrst_ctrl        | level-sensitive | from Opentitan IP |
+| `intr_pwrmgr_aon_wakeup                  `     | `IDs [152 +: 1]`  | 1            | pwrmgr_aon         | level-sensitive | from Opentitan IP |
+| `intr_usbdev_link_out_err                `     | `IDs [151 +: 1]`  | 1            | usbdev             | level-sensitive | from Opentitan IP |
+| `intr_usbdev_powered                     `     | `IDs [150 +: 1]`  | 1            | usbdev             | level-sensitive | from Opentitan IP |
+| `intr_usbdev_frame                       `     | `IDs [149 +: 1]`  | 1            | usbdev             | level-sensitive | from Opentitan IP |
+| `intr_usbdev_rx_bitstuff_err             `     | `IDs [148 +: 1]`  | 1            | usbdev             | level-sensitive | from Opentitan IP |
+| `intr_usbdev_rx_pid_err                  `     | `IDs [147 +: 1]`  | 1            | usbdev             | level-sensitive | from Opentitan IP |
+| `intr_usbdev_rx_crc_err                  `     | `IDs [146 +: 1]`  | 1            | usbdev             | level-sensitive | from Opentitan IP |
+| `intr_usbdev_link_in_err                 `     | `IDs [145 +: 1]`  | 1            | usbdev             | level-sensitive | from Opentitan IP |
+| `intr_usbdev_av_overflow                 `     | `IDs [144 +: 1]`  | 1            | usbdev             | level-sensitive | from Opentitan IP |
+| `intr_usbdev_rx_full                     `     | `IDs [143 +: 1]`  | 1            | usbdev             | level-sensitive | from Opentitan IP |
+| `intr_usbdev_av_empty                    `     | `IDs [142 +: 1]`  | 1            | usbdev             | level-sensitive | from Opentitan IP |
+| `intr_usbdev_link_resume                 `     | `IDs [141 +: 1]`  | 1            | usbdev             | level-sensitive | from Opentitan IP |
+| `intr_usbdev_link_suspend                `     | `IDs [140 +: 1]`  | 1            | usbdev             | level-sensitive | from Opentitan IP |
+| `intr_usbdev_link_reset                  `     | `IDs [139 +: 1]`  | 1            | usbdev             | level-sensitive | from Opentitan IP |
+| `intr_usbdev_host_lost                   `     | `IDs [138 +: 1]`  | 1            | usbdev             | level-sensitive | from Opentitan IP |
+| `intr_usbdev_disconnected                `     | `IDs [137 +: 1]`  | 1            | usbdev             | level-sensitive | from Opentitan IP |
+| `intr_usbdev_pkt_sent                    `     | `IDs [136 +: 1]`  | 1            | usbdev             | level-sensitive | from Opentitan IP |
+| `intr_usbdev_pkt_received                `     | `IDs [135 +: 1]`  | 1            | usbdev             | level-sensitive | from Opentitan IP |
+| `intr_spi_host1_spi_event                `     | `IDs [134 +: 1]`  | 1            | spi_host1          | level-sensitive | from Opentitan IP |
+| `intr_spi_host1_error                    `     | `IDs [133 +: 1]`  | 1            | spi_host1          | level-sensitive | from Opentitan IP |
+| `intr_spi_host0_spi_event                `     | `IDs [132 +: 1]`  | 1            | spi_host0          | level-sensitive | from Opentitan IP |
+| `intr_spi_host0_error                    `     | `IDs [131 +: 1]`  | 1            | spi_host0          | level-sensitive | from Opentitan IP |
+| `intr_alert_handler_classd               `     | `IDs [130 +: 1]`  | 1            | alert_handler      | level-sensitive | from Opentitan IP |
+| `intr_alert_handler_classc               `     | `IDs [129 +: 1]`  | 1            | alert_handler      | level-sensitive | from Opentitan IP |
+| `intr_alert_handler_classb               `     | `IDs [128 +: 1]`  | 1            | alert_handler      | level-sensitive | from Opentitan IP |
+| `intr_alert_handler_classa               `     | `IDs [127 +: 1]`  | 1            | alert_handler      | level-sensitive | from Opentitan IP |
+| `intr_otp_ctrl_otp_error                 `     | `IDs [126 +: 1]`  | 1            | otp_ctrl           | level-sensitive | from Opentitan IP |
+| `intr_otp_ctrl_otp_operation_done        `     | `IDs [125 +: 1]`  | 1            | otp_ctrl           | level-sensitive | from Opentitan IP |
+| `intr_rv_timer_timer_expired_hart0_timer0`     | `IDs [124 +: 1]`  | 1            | rv_timer           | level-sensitive | from Opentitan IP |
+| `intr_pattgen_done_ch1                   `     | `IDs [123 +: 1]`  | 1            | pattgen            | level-sensitive | from Opentitan IP |
+| `intr_pattgen_done_ch0                   `     | `IDs [122 +: 1]`  | 1            | pattgen            | level-sensitive | from Opentitan IP |
+| `intr_i2c2_host_timeout                  `     | `IDs [121 +: 1]`  | 1            | i2c2               | level-sensitive | from Opentitan IP |
+| `intr_i2c2_unexp_stop                    `     | `IDs [120 +: 1]`  | 1            | i2c2               | level-sensitive | from Opentitan IP |
+| `intr_i2c2_acq_full                      `     | `IDs [119 +: 1]`  | 1            | i2c2               | level-sensitive | from Opentitan IP |
+| `intr_i2c2_tx_overflow                   `     | `IDs [118 +: 1]`  | 1            | i2c2               | level-sensitive | from Opentitan IP |
+| `intr_i2c2_tx_stretch                    `     | `IDs [117 +: 1]`  | 1            | i2c2               | level-sensitive | from Opentitan IP |
+| `intr_i2c2_cmd_complete                  `     | `IDs [116 +: 1]`  | 1            | i2c2               | level-sensitive | from Opentitan IP |
+| `intr_i2c2_sda_unstable                  `     | `IDs [115 +: 1]`  | 1            | i2c2               | level-sensitive | from Opentitan IP |
+| `intr_i2c2_stretch_timeout               `     | `IDs [114 +: 1]`  | 1            | i2c2               | level-sensitive | from Opentitan IP |
+| `intr_i2c2_sda_interference              `     | `IDs [113 +: 1]`  | 1            | i2c2               | level-sensitive | from Opentitan IP |
+| `intr_i2c2_scl_interference              `     | `IDs [112 +: 1]`  | 1            | i2c2               | level-sensitive | from Opentitan IP |
+| `intr_i2c2_nak                           `     | `IDs [111 +: 1]`  | 1            | i2c2               | level-sensitive | from Opentitan IP |
+| `intr_i2c2_rx_overflow                   `     | `IDs [110 +: 1]`  | 1            | i2c2               | level-sensitive | from Opentitan IP |
+| `intr_i2c2_fmt_overflow                  `     | `IDs [109 +: 1]`  | 1            | i2c2               | level-sensitive | from Opentitan IP |
+| `intr_i2c2_rx_watermark                  `     | `IDs [108 +: 1]`  | 1            | i2c2               | level-sensitive | from Opentitan IP |
+| `intr_i2c2_fmt_watermark                 `     | `IDs [107 +: 1]`  | 1            | i2c2               | level-sensitive | from Opentitan IP |
+| `intr_i2c1_host_timeout                  `     | `IDs [106 +: 1]`  | 1            | i2c1               | level-sensitive | from Opentitan IP |
+| `intr_i2c1_unexp_stop                    `     | `IDs [105 +: 1]`  | 1            | i2c1               | level-sensitive | from Opentitan IP |
+| `intr_i2c1_acq_full                      `     | `IDs [104 +: 1]`  | 1            | i2c1               | level-sensitive | from Opentitan IP |
+| `intr_i2c1_tx_overflow                   `     | `IDs [103 +: 1]`  | 1            | i2c1               | level-sensitive | from Opentitan IP |
+| `intr_i2c1_tx_stretch                    `     | `IDs [102 +: 1]`  | 1            | i2c1               | level-sensitive | from Opentitan IP |
+| `intr_i2c1_cmd_complete                  `     | `IDs [101 +: 1]`  | 1            | i2c1               | level-sensitive | from Opentitan IP |
+| `intr_i2c1_sda_unstable                  `     | `IDs [100 +: 1]`  | 1            | i2c1               | level-sensitive | from Opentitan IP |
+| `intr_i2c1_stretch_timeout               `     | `IDs [99 +: 1] `  | 1            | i2c1               | level-sensitive | from Opentitan IP |
+| `intr_i2c1_sda_interference              `     | `IDs [98 +: 1] `  | 1            | i2c1               | level-sensitive | from Opentitan IP |
+| `intr_i2c1_scl_interference              `     | `IDs [97 +: 1] `  | 1            | i2c1               | level-sensitive | from Opentitan IP |
+| `intr_i2c1_nak                           `     | `IDs [96 +: 1] `  | 1            | i2c1               | level-sensitive | from Opentitan IP |
+| `intr_i2c1_rx_overflow                   `     | `IDs [95 +: 1] `  | 1            | i2c1               | level-sensitive | from Opentitan IP |
+| `intr_i2c1_fmt_overflow                  `     | `IDs [94 +: 1] `  | 1            | i2c1               | level-sensitive | from Opentitan IP |
+| `intr_i2c1_rx_watermark                  `     | `IDs [93 +: 1] `  | 1            | i2c1               | level-sensitive | from Opentitan IP |
+| `intr_i2c1_fmt_watermark                 `     | `IDs [92 +: 1] `  | 1            | i2c1               | level-sensitive | from Opentitan IP |
+| `intr_i2c0_host_timeout                  `     | `IDs [91 +: 1] `  | 1            | i2c0               | level-sensitive | from Opentitan IP |
+| `intr_i2c0_unexp_stop                    `     | `IDs [90 +: 1] `  | 1            | i2c0               | level-sensitive | from Opentitan IP |
+| `intr_i2c0_acq_full                      `     | `IDs [89 +: 1] `  | 1            | i2c0               | level-sensitive | from Opentitan IP |
+| `intr_i2c0_tx_overflow                   `     | `IDs [88 +: 1] `  | 1            | i2c0               | level-sensitive | from Opentitan IP |
+| `intr_i2c0_tx_stretch                    `     | `IDs [87 +: 1] `  | 1            | i2c0               | level-sensitive | from Opentitan IP |
+| `intr_i2c0_cmd_complete                  `     | `IDs [86 +: 1] `  | 1            | i2c0               | level-sensitive | from Opentitan IP |
+| `intr_i2c0_sda_unstable                  `     | `IDs [85 +: 1] `  | 1            | i2c0               | level-sensitive | from Opentitan IP |
+| `intr_i2c0_stretch_timeout               `     | `IDs [84 +: 1] `  | 1            | i2c0               | level-sensitive | from Opentitan IP |
+| `intr_i2c0_sda_interference              `     | `IDs [83 +: 1] `  | 1            | i2c0               | level-sensitive | from Opentitan IP |
+| `intr_i2c0_scl_interference              `     | `IDs [82 +: 1] `  | 1            | i2c0               | level-sensitive | from Opentitan IP |
+| `intr_i2c0_nak                           `     | `IDs [81 +: 1] `  | 1            | i2c0               | level-sensitive | from Opentitan IP |
+| `intr_i2c0_rx_overflow                   `     | `IDs [80 +: 1] `  | 1            | i2c0               | level-sensitive | from Opentitan IP |
+| `intr_i2c0_fmt_overflow                  `     | `IDs [79 +: 1] `  | 1            | i2c0               | level-sensitive | from Opentitan IP |
+| `intr_i2c0_rx_watermark                  `     | `IDs [78 +: 1] `  | 1            | i2c0               | level-sensitive | from Opentitan IP |
+| `intr_i2c0_fmt_watermark                 `     | `IDs [77 +: 1] `  | 1            | i2c0               | level-sensitive | from Opentitan IP |
+| `intr_spi_device_tpm_header_not_empty    `     | `IDs [76 +: 1] `  | 1            | spi_device         | level-sensitive | from Opentitan IP |
+| `intr_spi_device_readbuf_flip            `     | `IDs [75 +: 1] `  | 1            | spi_device         | level-sensitive | from Opentitan IP |
+| `intr_spi_device_readbuf_watermark       `     | `IDs [74 +: 1] `  | 1            | spi_device         | level-sensitive | from Opentitan IP |
+| `intr_spi_device_upload_payload_overflow `     | `IDs [73 +: 1] `  | 1            | spi_device         | level-sensitive | from Opentitan IP |
+| `intr_spi_device_upload_payload_not_empty`     | `IDs [72 +: 1] `  | 1            | spi_device         | level-sensitive | from Opentitan IP |
+| `intr_spi_device_upload_cmdfifo_not_empty`     | `IDs [71 +: 1] `  | 1            | spi_device         | level-sensitive | from Opentitan IP |
+| `intr_spi_device_generic_tx_underflow    `     | `IDs [70 +: 1] `  | 1            | spi_device         | level-sensitive | from Opentitan IP |
+| `intr_spi_device_generic_rx_overflow     `     | `IDs [69 +: 1] `  | 1            | spi_device         | level-sensitive | from Opentitan IP |
+| `intr_spi_device_generic_rx_error        `     | `IDs [68 +: 1] `  | 1            | spi_device         | level-sensitive | from Opentitan IP |
+| `intr_spi_device_generic_tx_watermark    `     | `IDs [67 +: 1] `  | 1            | spi_device         | level-sensitive | from Opentitan IP |
+| `intr_spi_device_generic_rx_watermark    `     | `IDs [66 +: 1] `  | 1            | spi_device         | level-sensitive | from Opentitan IP |
+| `intr_spi_device_generic_rx_full         `     | `IDs [65 +: 1] `  | 1            | spi_device         | level-sensitive | from Opentitan IP |
+| `intr_gpio_gpio                          `     | `IDs [33 +: 32]`  | 1            | gpio               | level-sensitive | from Opentitan IP |
+| `intr_uart3_rx_parity_err                `     | `IDs [32 +: 1] `  | 1            | uart3              | level-sensitive | from Opentitan IP |
+| `intr_uart3_rx_timeout                   `     | `IDs [31 +: 1] `  | 1            | uart3              | level-sensitive | from Opentitan IP |
+| `intr_uart3_rx_break_err                 `     | `IDs [30 +: 1] `  | 1            | uart3              | level-sensitive | from Opentitan IP |
+| `intr_uart3_rx_frame_err                 `     | `IDs [29 +: 1] `  | 1            | uart3              | level-sensitive | from Opentitan IP |
+| `intr_uart3_rx_overflow                  `     | `IDs [28 +: 1] `  | 1            | uart3              | level-sensitive | from Opentitan IP |
+| `intr_uart3_tx_empty                     `     | `IDs [27 +: 1] `  | 1            | uart3              | level-sensitive | from Opentitan IP |
+| `intr_uart3_rx_watermark                 `     | `IDs [26 +: 1] `  | 1            | uart3              | level-sensitive | from Opentitan IP |
+| `intr_uart3_tx_watermark                 `     | `IDs [25 +: 1] `  | 1            | uart3              | level-sensitive | from Opentitan IP |
+| `intr_uart2_rx_parity_err                `     | `IDs [24 +: 1] `  | 1            | uart2              | level-sensitive | from Opentitan IP |
+| `intr_uart2_rx_timeout                   `     | `IDs [23 +: 1] `  | 1            | uart2              | level-sensitive | from Opentitan IP |
+| `intr_uart2_rx_break_err                 `     | `IDs [22 +: 1] `  | 1            | uart2              | level-sensitive | from Opentitan IP |
+| `intr_uart2_rx_frame_err                 `     | `IDs [21 +: 1] `  | 1            | uart2              | level-sensitive | from Opentitan IP |
+| `intr_uart2_rx_overflow                  `     | `IDs [20 +: 1] `  | 1            | uart2              | level-sensitive | from Opentitan IP |
+| `intr_uart2_tx_empty                     `     | `IDs [19 +: 1] `  | 1            | uart2              | level-sensitive | from Opentitan IP |
+| `intr_uart2_rx_watermark                 `     | `IDs [18 +: 1] `  | 1            | uart2              | level-sensitive | from Opentitan IP |
+| `intr_uart2_tx_watermark                 `     | `IDs [17 +: 1] `  | 1            | uart2              | level-sensitive | from Opentitan IP |
+| `intr_uart1_rx_parity_err                `     | `IDs [16 +: 1] `  | 1            | uart1              | level-sensitive | from Opentitan IP |
+| `intr_uart1_rx_timeout                   `     | `IDs [15 +: 1] `  | 1            | uart1              | level-sensitive | from Opentitan IP |
+| `intr_uart1_rx_break_err                 `     | `IDs [14 +: 1] `  | 1            | uart1              | level-sensitive | from Opentitan IP |
+| `intr_uart1_rx_frame_err                 `     | `IDs [13 +: 1] `  | 1            | uart1              | level-sensitive | from Opentitan IP |
+| `intr_uart1_rx_overflow                  `     | `IDs [12 +: 1] `  | 1            | uart1              | level-sensitive | from Opentitan IP |
+| `intr_uart1_tx_empty                     `     | `IDs [11 +: 1] `  | 1            | uart1              | level-sensitive | from Opentitan IP |
+| `intr_uart1_rx_watermark                 `     | `IDs [10 +: 1] `  | 1            | uart1              | level-sensitive | from Opentitan IP |
+| `intr_uart1_tx_watermark                 `     | `IDs [9 +: 1]  `  | 1            | uart1              | level-sensitive | from Opentitan IP |
+| `intr_uart0_rx_parity_err                `     | `IDs [8 +: 1]  `  | 1            | uart0              | level-sensitive | from Opentitan IP |
+| `intr_uart0_rx_timeout                   `     | `IDs [7 +: 1]  `  | 1            | uart0              | level-sensitive | from Opentitan IP |
+| `intr_uart0_rx_break_err                 `     | `IDs [6 +: 1]  `  | 1            | uart0              | level-sensitive | from Opentitan IP |
+| `intr_uart0_rx_frame_err                 `     | `IDs [5 +: 1]  `  | 1            | uart0              | level-sensitive | from Opentitan IP |
+| `intr_uart0_rx_overflow                  `     | `IDs [4 +: 1]  `  | 1            | uart0              | level-sensitive | from Opentitan IP |
+| `intr_uart0_tx_empty                     `     | `IDs [3 +: 1]  `  | 1            | uart0              | level-sensitive | from Opentitan IP |
+| `intr_uart0_rx_watermark                 `     | `IDs [2 +: 1]  `  | 1            | uart0              | level-sensitive | from Opentitan IP |
+| `intr_uart0_tx_watermark                 `     | `IDs [1 +: 1]  `  | 1            | uart0              | level-sensitive | from Opentitan IP |
+| `1'b 0                                   `     | `ID [0 +: 1]   `  | 1            |                    |                 | reserved          |

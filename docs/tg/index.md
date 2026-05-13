@@ -1,10 +1,10 @@
-<!-- # Targets
+# Targets
 
-A *target* refers to an end use of SCAR-V. This could be a simulation setup, an FPGA or ASIC
-implementation, or the less common integration into other SoCs.
+A *target* refers to an implementation of the security island. This could be a simulation setup, an FPGA or ASIC
+implementation, or the more common integration into other SoCs.
 
 Target setups can either be *included* in this repository or live in an *external* repository and
-use SCAR-V as a dependency.
+use the security island as a dependency.
 
 ## Included Targets
 
@@ -17,7 +17,6 @@ page* in this chapter:
 
 ## External Targets
 
-For ASIC implementation target, where an additional wrapper is needed for clock generation blocks,
-bidirectional pads or additional circuitry, or the less common integration into larger SoCs,
-SCAR-V may be included either as a Bender dependency or Git submodule. For further information and
-best pratices, see [Integration](integr.md). -->
+For ASIC implementation target, where the security island is integrated into larger SoCs,
+the security island is included either as a Bender dependency or Git submodule. For further information and
+best pratices, see [Integration](integr.md).
