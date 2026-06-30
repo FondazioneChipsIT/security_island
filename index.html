@@ -21,7 +21,7 @@
     
     
       
-        <title>security_island - Security Island</title>
+        <title>Security Island - Security Island</title>
       
     
     
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#security_island" class="md-skip">
+        <a href="#security-island" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              security_island
+              Security Island
             
           </span>
         </div>
@@ -468,6 +468,25 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -486,14 +505,19 @@
   
 
 
-<h1 id="security_island">security_island</h1>
+<h1 id="security-island">Security Island</h1>
 <p>The security island, based on the <a href="https://opentitan.org/book/doc/introduction.html">OpenTitan project</a>, serves as the Hardware Root-of-Trust (HWRoT) of the platform. It handles <em>secure boot</em> and system integrity monitoring fully in HW through cryptographic acceleration services.</p>
-<p>The <em>user manual</em> provides detailed reference information on the security island:</p>
+<h2 id="overview">Overview</h2>
+<p>The documentation is organized as follows:</p>
 <ul>
-<li><a href="arch.md">Architecture</a>: Describes the hardware design, features, configuration and memory
-  map of security island.</li>
-<li><a href="sw.md">Software Stack</a>: Describes how to run code on security island and its heterogeneous software
-  stack.</li>
+<li><a href="gs/">Getting Started</a>: describes the main requirements and first steps to be performed to start working with the security island</li>
+<li><a href="spec/">Specification</a>: describes the hardware design, features, configuration and memory
+  map of security island</li>
+<li><a href="ver/">Verification</a>: describes the available tests used to verify the security island</li>
+<li><a href="um/">User Manual</a>: describes the steps required to perform the simulation and implementation flow for the macro and also to integrate this macro in a larger SoC.</li>
+<li><a href="cl/">Checklist</a></li>
+<li><a href="rn/">Release Notes</a></li>
+<li><a href="about/">About</a></li>
 </ul>
 
 
