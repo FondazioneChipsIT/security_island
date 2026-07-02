@@ -1,6 +1,6 @@
 # Architecture
 
-![Block Diagram](../img/secd_bd.png)
+![Block Diagram](./img/secd_bd.png)
 
 As shown in the block diagram above, *Security Island* comprises these components:
 
@@ -101,7 +101,7 @@ L1 SPM (TCDM).
 
 The Security Island has a single input clock which enters into 2 separated configurable clock dividers for RoT and Cluster, as shown in the image below.
 
-![Reset and Clock Distribution](../img/clk_rst.png)
+![Reset and Clock Distribution](./img/clk_rst.png)
 
 ## Memory Map
 

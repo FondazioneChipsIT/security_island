@@ -33,16 +33,12 @@ repo_url: https://github.com/FondazioneChipsIT/security_island
 repo_name: FondazioneChipsIT/security_island
 
 nav:
-- Home:
-  - index.md
-  - Getting Started: gs.md
-- Targets:
-  - tg/index.md
-  - Simulation: tg/sim.md
-  - Synthesis and physical implementation: tg/synth.md
-  - Xilinx FPGAs: tg/xilinx.md
-  - Integration: tg/integr.md
-- User Manual:
-  - um/index.md
-  - Architecture: um/arch.md
-  - Software Stack: um/sw.md
+  - Home:
+    - index.md
+    - Getting Started: gs.md
+  - Specification: spec.md
+  - Verification: ver.md
+  - User Manual: um.md
+  - Checklist: cl.md
+  - Release Notes: rn.md
+  - About: about.md
