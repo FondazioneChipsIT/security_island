@@ -72,6 +72,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#verification" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -323,6 +328,26 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Verification
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -340,6 +365,114 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#test-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Test Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scope
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#out-of-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Out of Scope
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-plan-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Plan Table
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Test Plan Table">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#opentitan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Opentitan
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pulp-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pulp Cluster
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testbench-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testbench Architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -470,6 +603,105 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#test-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Plan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Test Plan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scope
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#out-of-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Out of Scope
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-plan-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Plan Table
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Test Plan Table">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#opentitan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Opentitan
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pulp-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pulp Cluster
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testbench-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testbench Architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -489,9 +721,212 @@
   
 
 
-  <h1>Verification</h1>
-
-
+<h1 id="verification">Verification</h1>
+<p>This page describes the verification strategy, testbench architecture, and test suite for the
+Security Island.</p>
+<hr />
+<h2 id="test-plan">Test Plan</h2>
+<h3 id="scope">Scope</h3>
+<p>The verification targets the <code>Security Island</code> top-level module in RTL simulation, exercising several internal IPs:</p>
+<ul>
+<li>matmul</li>
+<li>neureka</li>
+<li>idma</li>
+</ul>
+<h3 id="out-of-scope">Out of Scope</h3>
+<ul>
+<li>Post-synthesis / gate-level simulation</li>
+<li>UVM test / Formal property verification</li>
+</ul>
+<h3 id="test-plan-table">Test Plan Table</h3>
+<h4 id="opentitan">Opentitan</h4>
+<p>The following list of tests is targeting Opentitan: mailbox communication, snooper
+These can be found here: "sw/tests/scarv".</p>
+<table>
+<thead>
+<tr>
+<th>Test name</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cluster_offload</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>idma_test</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>mbox_ext_irq</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>mbox_host</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>mbox_wu_cluster</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>snooper_stress_test</td>
+<td>✅</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><em>Legend: ✅ done · 🔄 in progress · ❌ not yet supported</em></p>
+<h4 id="pulp-cluster">Pulp Cluster</h4>
+<p>The following list of tests is targeting the cluster and its internal blocks, such as idma and neureka.
+These are all contained inside the regression_tests suite, which can be found here: <code>sw/tests/regression_tests/opentitan-cluster</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Test name</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hello</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>addressability</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>idma_test</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>mbox_test</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>dmr_matmul</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>ecc_test</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>neureka/neureka_fs1</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>neureka/neureka_fs3</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>neureka/neureka_fs3_dw</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>conv16</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>parMatrixMul8</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>parMatrixMul16</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>parMatrixMul32</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>idma_multi_core</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>idma_multi_core_2d</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>idma_multi_core_3d</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>deeploy/Adder/Adder_tiled</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>deeploy/Adder/Adder_untiled</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>deeploy/Attention/Attention_tiled</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>deeploy/simpleCNN/simpleCNN_tiled</td>
+<td>✅</td>
+<td></td>
+</tr>
+<tr>
+<td>deeploy/TitanCFI/TitanCFI-RQS-s8-small</td>
+<td>✅</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><em>Legend: ✅ done · 🔄 in progress · ❌ not yet supported</em></p>
+<p>These tests are launched together with the cluster offload binary for Ibex core using a double binary load mechanism, passing the path of the two .elf files after the <code>SRAM=</code> and <code>cl-bin=</code> parameters.
+Here is an example of the command to be used:</p>
+<pre><code class="language-bash">make sim_rtl SRAM=sw/tests/scarv/cluster_offload/bazel-out/cluster_offload.elf cl-bin=sw/tests/regression_tests/opentitan-cluster/hello/build/test/test
+</code></pre>
+<p>You can also use <code>cl-test=</code> parameter in place of <code>cl-bin=</code> and passing only the regression test name.</p>
+<pre><code class="language-bash">make sim_rtl SRAM=sw/tests/scarv/cluster_offload/bazel-out/cluster_offload.elf cl-test=hello
+</code></pre>
+<p>It is possible to compile and run a regression of these tests using a script, found in <code>scripts/regression/run_tests.py</code>, with this command:</p>
+<pre><code class="language-bash">python3 scripts/regression/run_tests.py
+</code></pre>
+<p>NOTE:
+There are two test for the mailbox used to communicate between the cluster and Opentitan which need to be launched with a different command:</p>
+<pre><code class="language-bash">make sim_rtl SRAM=sw/tests/scarv/mbox_ext_irq/bazel-out/mbox_ext_irq.elf cl-test=wu_ibex
+make sim_rtl SRAM=sw/tests/scarv/mbox_wu_cluster/bazel-out/mbox_wu_cluster.elf cl-test=mbox_wfe_cluster
+</code></pre>
+<p>It is possible to compile and run a regression of all these tests (both for cluster and for Opentitan) using a script, found in <code>sw/tests/pulp-runtime/scripts/bwruntests.py</code>, which compiles the test list <code>in opentitan-cluster.yaml</code></p>
+<pre><code class="language-bash">python3 sw/tests/pulp-runtime/scripts/bwruntests.py --proc-verbose -v --yaml opentitan-cluster.yaml
+</code></pre>
+<p>If you want to compile and run other tests for Ibex you should use the command for Bazel</p>
+<pre><code class="language-bash">make compile-bazel-sram test_name=&lt;test_name&gt; (e.g. sram_hello_world) target=&lt;target&gt; (e.g. opentitan)
+</code></pre>
+<hr />
+<h2 id="testbench-architecture">Testbench Architecture</h2>
 
 
 
