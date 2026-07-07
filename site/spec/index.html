@@ -73,7 +73,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#architecture" class="md-skip">
+        <a href="#specification" class="md-skip">
           Skip to content
         </a>
       
@@ -355,6 +355,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#block-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Block Diagram
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functional-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Functional Description
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Functional Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#clock-and-reset" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -364,8 +387,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#memory-map" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -375,8 +398,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#interrupt-map" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -384,6 +407,11 @@
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -557,6 +585,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#block-diagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Block Diagram
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functional-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Functional Description
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Functional Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#clock-and-reset" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -566,8 +617,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#memory-map" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -577,8 +628,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#interrupt-map" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -586,6 +637,11 @@
       
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -609,9 +665,14 @@
   
 
 
-<h1 id="architecture">Architecture</h1>
-<p><a class="glightbox" href="../img/secd_bd.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Block Diagram" src="../img/secd_bd.png" /></a></p>
-<p>As shown in the block diagram above, <em>Security Island</em> comprises these components:</p>
+<h1 id="specification">Specification</h1>
+<p>This page describes the architecture, interface, and implementation details of the <em>Security Island</em>.</p>
+<hr />
+<h2 id="block-diagram">Block Diagram</h2>
+<p><a class="glightbox" href="../img/secd_bd.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Block Diagram" src="../img/secd_bd.png" /></a>
+<em>Figure 1 — Top-level block diagram of the Security Island.</em></p>
+<h2 id="functional-description">Functional Description</h2>
+<p>As shown in the block diagram above, the <em>Security Island</em> comprises these components:</p>
 <ul>
 <li>
 <p><strong><a href="https://opentitan.org/book/doc/introduction.html">Root-of-Trust (OpenTitan)</a></strong></p>
@@ -672,7 +733,7 @@ application.</p>
 L1 SPM (TCDM).</p>
 <ul>
 <li>
-<p><strong>L2 Memory CHECK</strong></p>
+<p><strong>L2 Memory</strong></p>
 <p>a 512 KiB L2 memory used to store the application code to be executed by the cluster (PMCA)</p>
 </li>
 <li>
@@ -766,10 +827,10 @@ L1 SPM (TCDM).</p>
 | `CL_CLK_DIV_VALUE`               | `0xc`      |        `4` | Pulp Cluster clk divider value                                         |
 | `OT_CLK_DIV_VALUE`               | `0x10`     |        `4` | Opentitan clk divider value                                            |
 </code></pre>
-<h2 id="clock-and-reset">Clock and reset</h2>
-<p>The Security Island has a single input clock which enters into 2 separated configurable clock dividers for RoT and Cluster, as shown in the image below.</p>
+<h3 id="clock-and-reset">Clock and reset</h3>
+<p>The <em>Security Island</em> has a single input clock which enters into 2 separated configurable clock dividers for RoT and Cluster, as shown in the image below.</p>
 <p><a class="glightbox" href="../img/clk_rst.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Reset and Clock Distribution" src="../img/clk_rst.png" /></a></p>
-<h2 id="memory-map">Memory Map</h2>
+<h3 id="memory-map">Memory Map</h3>
 <table>
 <thead>
 <tr>
@@ -1590,7 +1651,7 @@ L1 SPM (TCDM).</p>
 </tr>
 </tbody>
 </table>
-<h2 id="interrupt-map">Interrupt map</h2>
+<h3 id="interrupt-map">Interrupt map</h3>
 <table>
 <thead>
 <tr>

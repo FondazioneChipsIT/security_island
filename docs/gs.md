@@ -33,11 +33,11 @@ first simulation. For integration into a larger SoC or FPGA design, see the [Use
 
 ```
 opentitan/
+├── docs/         # MkDocs documentation sources
 ├── hw/           # SystemVerilog RTL sources
 ├── sw/           # Testbench top-level and directed tests
-├── target/       # Target-specific setups (sim, FPGA, ASIC)
 ├── scripts/      # Some helper scripts for env setup
-└── doc/          # MkDocs documentation sources
+└── target/       # Target-specific setups (sim, FPGA, ASIC)
 ```
 ---
 
@@ -47,40 +47,86 @@ opentitan/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/AlSaqr-platform/opentitan
+git clone https://github.com/AlSaqr-platform/opentitan.git -b chips-it
 cd opentitan
 ```
 
-### 2. Fetch hardware dependencies
+### 2. Initialize the repo
+
+As first step, you need to load in you shell the environment variables for the required tools. If you are working on CHIPS-IT servers, you can run this command:
 
 ```bash
-bender update
+module load questa/2025.3 bender/0.28.2
+```
+Then you can run the initialization script:
+
+```bash
+make init
 ```
 
-This resolves all hardware IP dependencies declared in `Bender.yml` and creates the lock file
-`Bender.lock`. No network access is required after this step.
+This performes all the initialization steps:
+
+- it resolves all hardware IP dependencies declared in `Bender.yml` and creates the lock file`Bender.lock`. No network access is required after this step.
+- it generates the rtl hw for idma module
+- it clones flash memory vip needed for simulation
+- it creates the compile script for simulation
+
+!!! warning "Proprietary simulation models (†)"
+    Targets marked with (†) will download the **Infineon s25fs256s - 256 Megabit Serial Flash Memory simulation model**
+    (`hw/tb/vips/s25fs256s.v`) from its publicly accessible source.
+    This model is **proprietary** and subject to Infineon's non-free license terms.
+
+    By running `make init` or `make $(OT_ROOT)/hw/tb/vips`, you accept those terms. See the `Makefile` for the exact download source and license details.
+
+
+Then, use this command to clone the submodules :
+```bash
+git submodule update --init
+```
 
 ---
 
 ## Build Targets
 
-A *target* refers to an implementation of the security island. This could be a simulation setup, an FPGA or ASIC
-implementation, or the more common integration into other SoCs.
+Run `make <target>` from the repository root:
 
-Target setups can either be *included* in this repository or live in an *external* repository and
-use the security island as a dependency.
+| Target | Description |
+|---|---|
+| `sw-build-all` | Compile all firmware tests inside these folders: sw/tests/scarv and sw/tests/regression_tests/opentitan_cluster |
+| `build` | Compile hw files for simulation |
+| `build_tech_mem` | Compile hw files for simulation, including the tech cells models such as memory cuts, clock gating cells and others |
+| `opt_rtl` | Optimize hw files for simulation |
+| `sim_rtl` | Run simulation |
+| `sim_rtl_tech_mem` | Run simulation including the tech cells models such as memory cuts, clock gating cells and others |
+| `tech-init` | Clone tech cells from internal non-free resources — **not required for normal use** |
 
-### Included Targets
+---
 
-Included target setups live in the `target` directory. Each included target has a *documentation
-page* in this chapter:
+## Running a Simulation
 
-- [Simulation](sim.md)
-- [Synthesis and physical implementation](synth.md)
-- [Xilinx FPGAs](xilinx.md)
+Before running a simulation you need to compile the binary files for the sw test.
+You also need to load the environment variables for the gcc compilers:
+```bash
+module load pulp-gcc/1.0.16 riscv-gcc/15.1.0 questa/2025.3 bender/0.28.2
+```
 
-### External Targets
+Then you can build all the tests using this command
+```bash
+make sw-build-all
+```
 
-For ASIC implementation target, where the security island is integrated into larger SoCs,
-the security island is included either as a Bender dependency or Git submodule. For further information and
-best pratices, see [Integration](integr.md).
+Then you can run a simulation by using the command below and indicating the name of the test you want to run after ``SRAM=``. Let's try with "idma_test":
+
+```bash
+make build opt_rtl sim_rtl SRAM=sw/tests/scarv/idma_test/bazel-out/idma_test.elf
+```
+
+This will run in batch mode, if you wanto to open the gui add ``debug=1``:
+```bash
+make build opt_rtl sim_rtl SRAM=sw/tests/scarv/idma_test/bazel-out/idma_test.elf debug=1
+```
+
+For a full description of the testbench structure and available tests,
+see the [Verification](ver.md) page.
+
+---

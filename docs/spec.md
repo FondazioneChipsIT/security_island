@@ -1,8 +1,16 @@
-# Architecture
+# Specification
+
+This page describes the architecture, interface, and implementation details of the *Security Island*.
+
+---
+## Block Diagram
 
 ![Block Diagram](./img/secd_bd.png)
+*Figure 1 — Top-level block diagram of the Security Island.*
 
-As shown in the block diagram above, *Security Island* comprises these components:
+## Functional Description
+
+As shown in the block diagram above, the *Security Island* comprises these components:
 
 - **[Root-of-Trust (OpenTitan)](https://opentitan.org/book/doc/introduction.html)**
 
@@ -59,7 +67,7 @@ application.
 By default, the PMCA's processing elements and tensor accelerator share access to 256 KiB of
 L1 SPM (TCDM).
 
-- **L2 Memory CHECK**
+- **L2 Memory**
 
     a 512 KiB L2 memory used to store the application code to be executed by the cluster (PMCA)
 
@@ -97,13 +105,13 @@ L1 SPM (TCDM).
     | `OT_CLK_DIV_VALUE`               | `0x10`     |        `4` | Opentitan clk divider value                                            |
 
 
-## Clock and reset
+### Clock and reset
 
-The Security Island has a single input clock which enters into 2 separated configurable clock dividers for RoT and Cluster, as shown in the image below.
+The *Security Island* has a single input clock which enters into 2 separated configurable clock dividers for RoT and Cluster, as shown in the image below.
 
 ![Reset and Clock Distribution](./img/clk_rst.png)
 
-## Memory Map
+### Memory Map
 
 | **Start Address**        | **End Address (excl.)** | **Length**       | **Size** | **Permissions** | **Cacheable** | **Atomics** | **Region**   | **Device**                                                           |
 |--------------------------|-------------------------|------------------|----------|-----------------|---------------|-------------|--------------|----------------------------------------------------------------------|
@@ -181,7 +189,7 @@ The Security Island has a single input clock which enters into 2 separated confi
 | `0xfef0_0000`            |                         |                  |          |                 |               |             |              | OpenTitan: IDMA                                                      |
 | `0xfff0_0000`            |                         |                  |          |                 |               |             |              | OpenTitan: CRYPTO_SRAM MEM                                           |
 
-## Interrupt map
+### Interrupt map
 
 | **Interrupt Signal**                           | **CLIC ID #**     | **Bitwidth** | **IP Connection**  | **Type**        | **Comment**       |
 |------------------------------------------------|-------------------|--------------|--------------------|-----------------|-------------------|
